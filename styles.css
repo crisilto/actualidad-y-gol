@@ -1,0 +1,305 @@
+/* FUENTES */
+@font-face {
+    font-family: "TrebuchetMS";
+    src: url("fonts/TrebuchetMS.ttf");
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "BebasNeue";
+    src: url("fonts/BebasNeue.otf");
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "WebSymbolsRegular";
+    src: url("fonts/websymbols-regular-webfont.eot");
+    src: url("fonts/websymbols-regular-webfont.eot?#iefix") format("embedded-opentype"),
+        url("fonts/websymbols-regular-webfont.woff") format("woff"),
+        url("fonts/websymbols-regular-webfont.ttf") format("truetype"),
+        url("fonts/websymbols-regular-webfont.svg#WebSymbolsRegular") format("svg");
+    font-weight: normal;
+    font-style: normal;
+}
+
+/* COLORES */
+:root {
+    --morado: #8a7ba8;
+    --gris-oscuro: #555555;
+    --gris-claro: #c6c6c6;
+    --gris-clarito: #ededed;
+    --gris-letra: #e2e2e2;
+}
+
+/* ESTILOS GENERALES */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+}
+
+body {
+    background-color: var(--gris-claro);
+}
+
+.bebas {
+    font-family: "BebasNeue";
+    letter-spacing: 2px;
+}
+
+.trebuchet {
+    font-family: "TrebuchetMS";
+}
+
+.icon {
+    font-family: "WebSymbolsRegular";
+}
+
+.cabecera>.icon {
+    font-size: 30px;
+    border-bottom: 50px;
+}
+
+/* CABECERA */
+#header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: white;
+}
+
+/* ULTIMA HORA */
+.precabecera {
+    background-color: var(--gris-oscuro);
+    width: 100%;
+    padding: 0.5em;
+    text-align: center;
+    line-height: 20px;
+    height: 40px;
+}
+
+.precabecera ul {
+    display: inline-block;
+    margin-left: 1em;
+}
+
+.precabecera li {
+    display: inline;
+    margin-right: 0.5em;
+}
+
+.precabecera li a {
+    list-style: none;
+    text-decoration: none;
+    color: var(--gris-letra);
+    cursor: pointer;
+}
+
+
+/* LOGOTIPO Y TÍTULO */
+.cabecera {
+    background-color: var(--morado);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0px 70px;
+    width: 100%;
+    height: 80px;
+}
+
+.cabecera a h1 {
+    animation: fromRight 500ms linear;
+}
+
+@keyframes fromRight {
+    from {
+        transform: translateX(200%);
+    }
+
+    to {
+        transform: translateX(0%);
+    }
+}
+
+.cabecera h1 {
+    font-size: 60px;
+    color: var(--gris-letra);
+}
+
+.cabecera h1 .gris {
+    color: var(--gris-oscuro);
+}
+
+/* NAVEGACIÓN */
+.nav {
+    background-color: var(--gris-oscuro);
+    width: 100%;
+    padding: 0.5em;
+    text-align: center;
+    line-height: 20px;
+    height: 40px;
+    position: relative;
+}
+
+.nav li {
+    display: inline-block;
+    position: relative;
+}
+
+.nav li a {
+    list-style: none;
+    text-decoration: none;
+    color: var(--gris-letra);
+    cursor: pointer;
+    padding: 0px 80px;
+    font-size: 20px;
+    line-height: 25px;
+}
+
+.nav li>ul {
+    display: none;
+    position: absolute;
+    background-color: var(--gris-oscuro);
+    min-width: 200px;
+    left: 0;
+    top: 100%;
+    box-sizing: border-box;
+}
+
+.nav li>ul li {
+    text-align: left;
+    padding: 10px;
+}
+
+.nav li>ul li a {
+    padding: 0px 10px;
+    color: white;
+    display: block;
+    font-size: 18px;
+}
+
+.nav li:hover>ul {
+    display: block;
+    z-index: 1;
+}
+
+.nav a:hover {
+    color: var(--gris-letra);
+    text-shadow: 1px -1px 0px var(--gris-claro);
+    transition: all 300ms;
+}
+
+/* BOTÓN REGÍSTRATE */
+.cabecera button {
+    font-family: "TrebuchetMS";
+    background-color: var(--gris-oscuro);
+    color: var(--gris-letra);
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.cabecera button:hover {
+    background-color: var(--gris-claro);
+    border: 3px solid var(--gris-oscuro);
+    color: var(--morado);
+    font-weight: bolder;
+    padding: 7px 17px;
+    transition: all 500ms;
+}
+
+@media (max-width: 1498px) {
+    .icon {
+        font-size: 15px;
+    }
+
+    .precabecera li a {
+        font-size: 15px;
+        margin-left: 2px;
+    }
+
+    .precabecera {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+    }
+}
+
+@media (max-width: 1374px) {
+    .icon {
+        font-size: 13px;
+    }
+
+    .precabecera li a {
+        font-size: 13px;
+        font-weight: bold;
+    }
+
+    .precabecera {
+        justify-content: space-around;
+    }
+}
+
+@media (max-width: 1218px) {
+    .icon {
+        font-size: 12px;
+    }
+
+    .precabecera li a {
+        font-size: 12px;
+        font-weight: bold;
+    }
+
+    .precabecera {
+        justify-content: space-between;
+    }
+}
+
+@media (max-width: 1194px) {
+
+    .precabecera ul:first-child {
+        display: none;
+    }
+    
+    .opciones {
+        padding: 0;
+        width: 100%; 
+        list-style: none;
+    }
+
+    .opciones li a {
+        margin-left: 100px;
+    }
+
+    .nav li a {
+        padding: 0px 40px;
+    }
+}
+
+@media (max-width: 796px) {
+    .nav li a {
+        padding: 0px 10px;
+    }
+}
+
+@media (max-width: 664px) {
+    .cabecera h1 {
+        font-size: 40px;
+    }
+    .cabecera button {
+        padding: 5px 10px;
+    }
+    
+    .cabecera button:hover {
+        padding: 4px 9px;
+    }
+
+    .cabecera>.icon {
+        font-size: 25px;
+        padding-bottom: 12px;
+    }
+}
